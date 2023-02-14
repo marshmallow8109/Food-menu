@@ -17,7 +17,8 @@ you can split, use ABCSS or BEM to re-arrange or modify.
   --radius: 0.5rem;
   --clr-grey-10: hsl(210, 36%, 96%);
    --clr-grey-1: hsl(209, 61%, 16%);
-   --FS: clamp(1.5rem, 5vh, 3rem)
+   --FS: clamp(1.5rem, 5vh, 3rem);
+   --shaow: rgb(138, 127, 127);
 }
 
 body {
@@ -72,12 +73,22 @@ p {
   margin: 0 auto;
   text-align: center;
 }
+.tagline{
+  color: #fff;
+  text-align: center;
+  font-size: clamp(0.6rem, 2.2vh, 1.5rem);
+}
 .heading{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin-bottom: 2rem;
+}
+
+.heading h1{
+  color: #ffffff;
+   text-shadow: 4px 4px 3px var(--shaow);
 }
 .underline{
   width: 5rem;
