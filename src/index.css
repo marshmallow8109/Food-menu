@@ -1,13 +1,242 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* 
+This CSS contains the styling for all compnents in one place,
+as this is a small project.
+you can split, use ABCSS or BEM to re-arrange or modify.
+
+*/
+
+*, ::before, ::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+  --clr-black: #222;
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.5rem;
+  --clr-grey-10: hsl(210, 36%, 96%);
+   --clr-grey-1: hsl(209, 61%, 16%);
+   --FS: clamp(1.5rem, 5vh, 3rem)
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: var(--clr-grey-10);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+  min-width: 100%;
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+h1 {
+  font-size: var(--FS);
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-5);
+}
+
+
+.nav-center{
+  display: grid;
+  place-content: center;
+  align-items: center;
+  width: 100vw;
+  background-image: url('/public/imgFolder/black.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 30vh;
+}
+.Hero h1{
+  color: var(--clr-grey-10);
+  margin: 0 auto;
+  text-align: center;
+}
+.heading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+.underline{
+  width: 5rem;
+  height: 3px;
+  background-color: gray;
+}
+.underline-gray{
+  width: 18rem;
+  height: 3px;
+  background-color: gray;
+  margin-bottom: 0.5rem;
+}
+
+article{
+  margin-bottom: 2rem;
+}
+
+.container{
+  width: 95vw;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.image-container{
+  width: 18rem;
+  height: 10rem;
+  border: 5px solid green;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  transition: var(--transition);
+  position: relative;
+}
+
+.image-container:hover{
+  scale: 1.05;
+}
+
+.photo{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content{
+  display: grid;
+  place-content: center;
+  align-items: start;
+}
+
+.btn button{
+  padding: 5px 10px;
+    color: green;
+    border: 2px solid green;
+    margin-right: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    letter-spacing: var(--spacing);
+    transition: var(--transition);
+}
+
+.btn button:hover{
+  background-color: green;
+  color: var(--clr-grey-10);
+}
+
+.fiter-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.no-data{
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+.no-data button{
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  background-color: green;
+  color: var(--clr-grey-10);
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.no-data button:hover{
+  
+ 
+}
+
+.fiter-container button{
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: rgb(148, 133, 46);
+  font-weight: 600;
+}
+.fiter-container button:hover{
+  border: 1px solid var(--clr-black);
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .article-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    align-content: center;
+    margin: 0 auto;
+    gap: 1rem;
+  }
+  .image-container{
+    width: 19rem;
+    height: 11rem;
+  }
+  .btn{
+    display: flex;
+  }
+  .btn button:nth-child(2){
+    color: rgb(150, 17, 17);
+  }
+  .btn button:nth-child(2):hover{
+    background-color: rgb(170, 34, 34);
+    color: #fff;  
+  }
+  
+}
+@media screen and (min-width: 1350px) {
+  .content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+    margin: 0 auto;
+   
+   }
+  .image-container{
+    width: 20rem;
+    height: 12rem;
+  }
+}
+
+.title{
+  width: 18rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.title p{
+  color: green;
+  font-weight:700;
+}
+
+.desc{
+  width: 18rem;
 }
