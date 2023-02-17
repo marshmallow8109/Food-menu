@@ -1,5 +1,4 @@
-import { useState } from "react";
-
+// menu component
 const Menu = ({ data, handleDelete, handleClick, category }) => {
   return (
     <section className="container">
@@ -8,6 +7,7 @@ const Menu = ({ data, handleDelete, handleClick, category }) => {
         <div className="underline"></div>
       </div>
 
+      {/* menu fiter buttons here */}
       <div className="fiter-container">
         {category.map((item, index) => {
           return (
@@ -18,6 +18,7 @@ const Menu = ({ data, handleDelete, handleClick, category }) => {
         })}
       </div>
 
+      {/* map and display menu items / food items */}
       <div className="content">
         {data.map((item) => {
           const { id, img, title, price, description } = item;

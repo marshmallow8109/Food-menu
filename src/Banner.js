@@ -1,3 +1,4 @@
+//Banner component
 const Banner = () => {
   return (
     <>
